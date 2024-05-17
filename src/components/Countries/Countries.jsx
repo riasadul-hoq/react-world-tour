@@ -24,7 +24,11 @@ const Countries = () => {
         <h3>Countries Visited</h3>
         <ul>
           {countryVisited.map((country) => (
-            <li key={country.cca3}>{country.name.common}</li>
+            <li key={country.cca3}>
+              {country.name.common}
+              <br></br>
+              <img src={country.flags.png} alt="" width="100" />
+            </li>
           ))}
         </ul>
       </div>
