@@ -1,8 +1,8 @@
-import "./Country.css";
 import { useState } from "react";
+import "./Country.css";
 
 const Country = ({ country, handleCountryVisited }) => {
-  const { name, cca3, area, population, flags } = country;
+  const { name, cca3, area, population, flags, capital } = country;
 
   const [visited, setVisited] = useState(false);
 
@@ -16,6 +16,7 @@ const Country = ({ country, handleCountryVisited }) => {
       <h3>Name: {name?.common}</h3>
       <small>Code: {cca3}</small>
       <img src={flags.png} alt="" />
+      <p>Capital: {capital}</p>
       <p>Area: {area} km&#178;</p>
       <p>Population: {population}</p>
       <br></br>

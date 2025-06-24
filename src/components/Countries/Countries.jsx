@@ -1,17 +1,20 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import Country from "../Country/Country";
+import { useEffect, useState } from "react";
 import "../Countries/Countries.css";
+import Country from "../Country/Country";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [countryVisited, setCountryVisited] = useState([]);
 
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
+    fetch(
+      "https://restcountries.com/v3.1/all?fields=name,flags,cca3,area,population,capital"
+    )
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
+
+  // console.log(countries);
 
   const handleCountryVisited = (country) => {
     const newCountryVisited = [...countryVisited, country];
